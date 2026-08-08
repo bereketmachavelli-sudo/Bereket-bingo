@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bereket Bingo</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #17243a;
+            color: white;
+            text-align: center;
+        }
+
+        .header {
+            padding: 20px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .balance {
+            background: #243652;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 18px;
+        }
+
+        .bingo-title {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin: 15px;
+        }
+
+        .letter {
+            padding: 12px 5px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .b { background: #ef3340; }
+        .i { background: #13b85a; }
+        .n { background: #e9a900; }
+        .g { background: #8840e8; }
+        .o { background: #f07818; }
+
+        .card {
+            width: 90%;
+            max-width: 350px;
+            margin: auto;
+            background: #243652;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+
+        .number {
+            background: #1b2b43;
+            border: 1px solid #52627a;
+            border-radius: 8px;
+            padding: 13px 3px;
+            font-size: 17px;
+        }
+
+        .free {
+            background: #13b85a;
+        }
+
+        .draw {
+            margin: 20px;
+            background: #8840e8;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .draw-label {
+            font-size: 22px;
+        }
+
+        .draw-number {
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .bingo-button {
+            margin: 20px;
+            width: 90%;
+            max-width: 350px;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            background: #16a765;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        🎱 BEREKET BINGO
+    </div>
+
+    <div class="balance">
+        💰 Balance: <b>0.00 ETB</b>
+    </div>
+
+    <div class="draw">
+        <div class="draw-label">Waiting</div>
+        <div class="draw-number">--</div>
+    </div>
+
+    <div class="bingo-title">
+        <div class="letter b">B</div>
+        <div class="letter i">I</div>
+        <div class="letter n">N</div>
+        <div class="letter g">G</div>
+        <div class="letter o">O</div>
+    </div>
+
+    <div class="card">
+
+        <div class="grid">
+
+            <div class="number">12</div>
+            <div class="number">21</div>
+            <div class="number">38</div>
+            <div class="number">57</div>
+            <div class="number">65</div>
+
+            <div class="number">11</div>
+            <div class="number">24</div>
+            <div class="number">33</div>
+            <div class="number">58</div>
+            <div class="number">67</div>
+
+            <div class="number">7</div>
+            <div class="number">30</div>
+            <div class="number free">🎁</div>
+            <div class="number">54</div>
+            <div class="number">73</div>
+
+            <div class="number">6</div>
+            <div class="number">23</div>
+            <div class="number">32</div>
+            <div class="number">47</div>
+            <div class="number">63</div>
+
+            <div class="number">4</div>
+            <div class="number">25</div>
+            <div class="number">31</div>
+            <div class="number">53</div>
+            <div class="number">68</div>
+
+        </div>
+
+    </div>
+
+    <button class="bingo-button">
+        BINGO
+    </button>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+
+        tg.ready();
+        tg.expand();
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bereket Bingo</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #17243a;
+            color: white;
+            text-align: center;
+        }
+
+        .header {
+            padding: 20px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .balance {
+            background: #243652;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 18px;
+        }
+
+        .bingo-title {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin: 15px;
+        }
+
+        .letter {
+            padding: 12px 5px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .b { background: #ef3340; }
+        .i { background: #13b85a; }
+        .n { background: #e9a900; }
+        .g { background: #8840e8; }
+        .o { background: #f07818; }
+
+        .card {
+            width: 90%;
+            max-width: 350px;
+            margin: auto;
+            background: #243652;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+
+        .number {
+            background: #1b2b43;
+            border: 1px solid #52627a;
+            border-radius: 8px;
+            padding: 13px 3px;
+            font-size: 17px;
+        }
+
+        .free {
+            background: #13b85a;
+        }
+
+        .draw {
+            margin: 20px;
+            background: #8840e8;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .draw-label {
+            font-size: 22px;
+        }
+
+        .draw-number {
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .bingo-button {
+            margin: 20px;
+            width: 90%;
+            max-width: 350px;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            background: #16a765;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        🎱 BEREKET BINGO
+    </div>
+
+    <div class="balance">
+        💰 Balance: <b>0.00 ETB</b>
+    </div>
+
+    <div class="draw">
+        <div class="draw-label">Waiting</div>
+        <div class="draw-number">--</div>
+    </div>
+
+    <div class="bingo-title">
+        <div class="letter b">B</div>
+        <div class="letter i">I</div>
+        <div class="letter n">N</div>
+        <div class="letter g">G</div>
+        <div class="letter o">O</div>
+    </div>
+
+    <div class="card">
+
+        <div class="grid">
+
+            <div class="number">12</div>
+            <div class="number">21</div>
+            <div class="number">38</div>
+            <div class="number">57</div>
+            <div class="number">65</div>
+
+            <div class="number">11</div>
+            <div class="number">24</div>
+            <div class="number">33</div>
+            <div class="number">58</div>
+            <div class="number">67</div>
+
+            <div class="number">7</div>
+            <div class="number">30</div>
+            <div class="number free">🎁</div>
+            <div class="number">54</div>
+            <div class="number">73</div>
+
+            <div class="number">6</div>
+            <div class="number">23</div>
+            <div class="number">32</div>
+            <div class="number">47</div>
+            <div class="number">63</div>
+
+            <div class="number">4</div>
+            <div class="number">25</div>
+            <div class="number">31</div>
+            <div class="number">53</div>
+            <div class="number">68</div>
+
+        </div>
+
+    </div>
+
+    <button class="bingo-button">
+        BINGO
+    </button>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+
+        tg.ready();
+        tg.expand();
+    </script>
+
+</body>
+</html>
